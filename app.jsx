@@ -5,50 +5,48 @@
 		getInitialState:function(){
 			rows = [];
 			for(var i=0; i < this.props.rows; i++){
-				row = [];
+				row = []
 				for(var j=0; j < this.props.rows; j++){
-					row.push(" ");
+					row.push(" ")
 
 				}
-				rows.push(row);
-			}
-			console.log('hello')
-			return {rows:rows, turn:"o"}
+				rows.push(row)
 
+			}
+			console.log(rows)
+			return {rows:rows,turn:"o"}
 		},
 
 		render: function(){
-
-			{ this.state.rows.map(function(row){
-				return (
-					<Square />
-					);
-			}, this) }
+			return (
+				<div>
+			{this.state.rows.map(function(row){
+			return(<tr>
+				{row.map(function(square){
+					return(<td class="square">Hello</td>)
+					console.log()
+				})}
+			</tr>)
+			})}
+			</div>
+			)
 
 
 		}
-	})
+	});
 
 
-	var Row = React.createClass({
-		render:function(){
-			return <tr><Square /></tr>
-		}
+// var Square = React.createClass({
+// 	render:function(){
+// 		return <td></td>
+// 	}
 
-	})
-
-
-	var Square = React.createClass({
-		render:function(){
-			return <td></td>
-		}
-
-	})
+// })
 
 
 	// React.render(<Square /> , document.getElementById('board'));
 
-	React.render(<TicTacToeGame rows="3" />, document.getElementById('board'));
+	React.render(<TicTacToeGame rows="5" />, document.getElementById('board'));
 
 
 })();
