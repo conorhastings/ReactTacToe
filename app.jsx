@@ -19,16 +19,16 @@
 
 		render: function(){
 			return (
-				<div>
+				<table>
 			{this.state.rows.map(function(row){
 			return(<tr>
 				{row.map(function(square){
-					return(<td class="square">Hello</td>)
+					return(<td className="square">Hello</td>)
 					console.log()
 				})}
 			</tr>)
 			})}
-			</div>
+			</table>
 			)
 
 
@@ -46,7 +46,7 @@
 
 	// React.render(<Square /> , document.getElementById('board'));
 
-	React.render(<TicTacToeGame rows="5" />, document.getElementById('board'));
+	React.render(<TicTacToeGame rows="5" />, document.body);
 
 
 })();
