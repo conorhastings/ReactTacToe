@@ -18,10 +18,10 @@
 		},
 
 		render: function(){
-		
-			{ this.state.rows.map(function(){
+
+			{ this.state.rows.map(function(row){
 				return (
-					<tr></tr>
+					<Square />
 					);
 			}, this) }
 
@@ -30,7 +30,23 @@
 	})
 
 
+	var Row = React.createClass({
+		render:function(){
+			return <tr><Square /></tr>
+		}
 
+	})
+
+
+	var Square = React.createClass({
+		render:function(){
+			return <td></td>
+		}
+
+	})
+
+
+	// React.render(<Square /> , document.getElementById('board'));
 
 	React.render(<TicTacToeGame rows="3" />, document.getElementById('board'));
 
