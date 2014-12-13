@@ -19,11 +19,12 @@
 
 		render: function(){
 			return (
+				
 				<table>
 			{this.state.rows.map(function(row){
 			return(<tr>
 				{row.map(function(square){
-					return(<td className="square">Hello</td>)
+					return(<Square />)
 					console.log()
 				})}
 			</tr>)
@@ -36,17 +37,17 @@
 	});
 
 
-// var Square = React.createClass({
-// 	render:function(){
-// 		return <td></td>
-// 	}
+var Square = React.createClass({
+	render:function(){
+		return <td className="square"></td>
+	}
 
-// })
+})
 
 
 	// React.render(<Square /> , document.getElementById('board'));
 
-	React.render(<TicTacToeGame rows="5" />, document.body);
+	React.render(<TicTacToeGame rows="3" />, document.getElementById('targetEl'));
 
 
 })();

@@ -2,4 +2,9 @@
     width:100px;
     height:100px;
     border:1px solid #000;
+    text-align:center;
+}
+#targetEl{
+	margin-top:5%;
+	margin-bottom:5%;
 }
