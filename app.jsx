@@ -1,26 +1,38 @@
+(function(){
 
+	var TicTacToeGame = React.createClass({
 
-var TicTacToeGame = React.createClass({
+		getInitialState:function(){
+			rows = [];
+			for(var i=0; i < this.props.rows; i++){
+				row = [];
+				for(var j=0; j < this.props.rows; j++){
+					row.push(" ");
 
-	getInitialState:function(){
-		rows = [];
-		for(var i=0; i < this.props.rows; i++){
-			row = [];
-			for(var j=0; j < this.props.rows; j++){
-				row.push(" ");
-
+				}
+				rows.push(row);
 			}
-			rows.push(row);
+			console.log('hello')
+			return {rows:rows, turn:"o"}
+
+		},
+
+		render: function(){
+		
+			{ this.state.rows.map(function(){
+				return (
+					<tr></tr>
+					);
+			}, this) }
+
+
 		}
-		return {rows:rows, turn:"x"}
-
-	},
-
-	render: function(){
-		return <div>Hello {this.state.rows}</div>
+	})
 
 
-	}
-})
 
-React.render(<TicTacToeGame rows = "10"/>, document.getElementById('test'));
+
+	React.render(<TicTacToeGame rows="3" />, document.getElementById('board'));
+
+
+})();
