@@ -138,12 +138,12 @@
 
  			return <div>
  			<div className = "container">
- 			<div className = "col-md-8 col-md-offset-2 text-center">
+ 				<div className = "col-md-8 col-md-offset-2 text-center">
 
- 			<h1>Welcome to React Tac Toe</h1>
- 			<h1>Current Turn is: {this.state.turn}</h1>
- 			<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
- 			<table className = "center-block">
+ 					<h1>Welcome to React Tac Toe</h1>
+ 					<h1>Current Turn is: {this.state.turn}</h1>
+ 					<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
+ 					<table className = "center-block">
  			{this.state.board.map(function(row,index){
  				return(<tr key={index}>
  					{row.map(function(square,location){
