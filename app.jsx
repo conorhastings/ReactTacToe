@@ -30,11 +30,11 @@
  			
  			if (checkWin[1] == true){
  			
- 				alert(checkWin[0]+" click ok to start a new game")
+ 				alert(checkWin[0]+" ,click ok to start a new game")
  				this.newGame()
  			}
  			else if(checkWin[0] == "tie" ){
- 				alert("the game has ended in a tie, click ok to start a new game")
+ 				alert("The game has ended in a tie, click ok to start a new game")
  				this.newGame()
  			}
 
