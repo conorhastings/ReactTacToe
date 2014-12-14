@@ -113,6 +113,7 @@
  			var myTurn = this.state.turn;
  			var makeTurn = this.makeTurn;
  			return <div>
+ 			<div className = "container">
  			<h1>Welcome to React Tac Toe</h1>
  			<h1>Current Turn is: {this.state.turn}</h1>
  			<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
@@ -127,6 +128,7 @@
  					</tr>);
  			})}
  			</table>
+ 			</div>
  			</div>
 
 
@@ -147,7 +149,7 @@ var Square = React.createClass({
 
 })
 
-React.render(<TicTacToeGame rows="3" />, document.getElementById('targetEl'));
+React.render(<TicTacToeGame rows="3" />, document.body);
 
 
 })();
