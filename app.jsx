@@ -8,7 +8,7 @@
  		getInitialState:function(){
 
  			//call the make board function to create a board based on number of rows requested
- 			return {board:this.makeBoard(),turn:"O"}
+ 			return {board:this.makeBoard(),turn:"O",rows:3}
  		},
  		makeTurn: function(square, row, turn) {
  			var board = this.state.board;
@@ -111,10 +111,12 @@
  		},
  		//function to start a new game, resets the states back to initial states
  		newGame:function(){
+
  			this.setState({board:this.makeBoard(), turn:"O"});
  		},
  		//make rows for the board based on number specified when rendering the game
  		makeBoard:function(){
+
  			var board = [];
  			//first loop for number of rows
  			for(var i=0; i < this.props.rows; i++){
@@ -133,14 +135,15 @@
 	render: function(){
  			var myTurn = this.state.turn;
  			var makeTurn = this.makeTurn;
+
  			return <div>
  			<div className = "container">
+ 				<div className = "col-md-8 col-md-offset-2 text-center">
 
- 			<h1>Welcome to React Tac Toe</h1>
- 			<h1>Current Turn is: {this.state.turn}</h1>
-
- 			<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
- 			<table>
+ 					<h1>Welcome to React Tac Toe</h1>
+ 					<h1>Current Turn is: {this.state.turn}</h1>
+ 					<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
+ 					<table className = "center-block">
  			{this.state.board.map(function(row,index){
  				return(<tr key={index}>
  					{row.map(function(square,location){
@@ -151,6 +154,7 @@
  					</tr>);
  			})}
  			</table>
+ 			</div>
  			</div>
  			</div>
 
