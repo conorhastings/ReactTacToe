@@ -17,11 +17,23 @@
 
  			}
 
+
  			return {rows:rows,turn:"O"}
  		},
- 		clickBox: function(square, row, player) {
- 			console.log('hello')
-			},
+ 		clickBox: function(square, row, turn) {
+ 			var rows = this.state.rows;
+ 			rows[row][square] = turn
+ 			if (turn== "O"){
+ 				var newTurn = "X"
+ 			}
+ 			else{
+ 				var newTurn = "O"
+ 			}
+ 			console.log(rows)
+ 			console.log(newTurn)
+ 			this.setState({rows:rows, turn:newTurn})
+
+ 		},
 
  		render: function(){
  			myTurn = this.state.turn;
@@ -29,17 +41,17 @@
  			return <div>
  			<h1>Current Turn is: {this.state.turn}</h1>
  			<table>
- 				{this.state.rows.map(function(row,index){
- 					return(<tr key={index}>
- 						{row.map(function(square,location){
- 	
- 							return( <Square status={square} key = {location} location = {location} row = {index} turn={myTurn} clickBox={clickBox} />);
- 							console.log()
- 						})}
- 						</tr>);
- 				})}
- 				</table>
- 				</div>
+ 			{this.state.rows.map(function(row,index){
+ 				return(<tr key={index}>
+ 					{row.map(function(square,location){
+
+ 						return( <Square status={square} key = {location} location = {location} row = {index} turn={myTurn} clickBox={clickBox} />);
+ 						console.log()
+ 					})}
+ 					</tr>);
+ 			})}
+ 			</table>
+ 			</div>
 
 
 
@@ -51,12 +63,18 @@
 
  	var Square = React.createClass({
 
+ 		getInitialState:function(){
+ 			return {square: " "}
+ 		},
+
  		handleClick: function(){
  			console.log('clicked')
  			this.props.clickBox(this.props.location, this.props.row,this.props.turn);
+ 			this.setState({square:this.props.turn})
+
  		},
  		render:function(){
- 			return <td className="square" onClick={this.handleClick}></td>
+ 			return <td className="square" onClick={this.handleClick}><h3>{this.state.square}</h3></td>
  		}
 
  	})
