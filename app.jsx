@@ -111,21 +111,18 @@
  		},
  		//function to start a new game, resets the states back to initial states
  		newGame:function(){
+
  			this.setState({board:this.makeBoard(), turn:"O"});
  		},
  		//make rows for the board based on number specified when rendering the game
  		makeBoard:function(){
- 			if(this.state){
- 				rows = this.state.rows;
- 			}else{
- 				rows  = this.props.rows;
- 			}
+
  			var board = [];
  			//first loop for number of rows
- 			for(var i=0; i < rows; i++){
+ 			for(var i=0; i < this.props.rows; i++){
  				row = []
  				//second loop for number of items in row
- 				for(var j=0; j < rows; j++){
+ 				for(var j=0; j < this.props.rows; j++){
  					row.push(" ")
 
  				}
@@ -138,12 +135,12 @@
 	render: function(){
  			var myTurn = this.state.turn;
  			var makeTurn = this.makeTurn;
+
  			return <div>
  			<div className = "container">
 
  			<h1>Welcome to React Tac Toe</h1>
  			<h1>Current Turn is: {this.state.turn}</h1>
-
  			<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
  			<table>
  			{this.state.board.map(function(row,index){
