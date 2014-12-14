@@ -32,7 +32,7 @@
  			}
  			checkWin = this.winningBoard()
  			
- 			//check win returns an array, the first element of the array is a message, the second is 
+ 			//this.winningBoard() returns an array, the first element of the array is a message, the second is 
  			//whether or not a win occurred
  			if (checkWin[1] == true){
  				//alert players to win/win location and start a new game when alert box is closed
@@ -135,8 +135,10 @@
  			var makeTurn = this.makeTurn;
  			return <div>
  			<div className = "container">
+
  			<h1>Welcome to React Tac Toe</h1>
  			<h1>Current Turn is: {this.state.turn}</h1>
+
  			<button className="btn btn-danger" onClick = {this.newGame}>Restart Game</button><br /><br />
  			<table>
  			{this.state.board.map(function(row,index){
