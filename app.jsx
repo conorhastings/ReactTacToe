@@ -30,8 +30,12 @@
  				var newTurn = "O"
  			}
  			console.log(rows)
- 			console.log(newTurn)
+
  			this.setState({rows:rows, turn:newTurn})
+
+ 		},
+
+ 		winningBoard:function(){
 
  		},
 
@@ -82,7 +86,7 @@
 
 	// React.render(<Square /> , document.getElementById('board'));
 
-	React.render(<TicTacToeGame rows="3" />, document.getElementById('targetEl'));
+	React.render(<TicTacToeGame rows="5" />, document.getElementById('targetEl'));
 
 
 })();
