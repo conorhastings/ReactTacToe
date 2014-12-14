@@ -8,7 +8,7 @@
  		getInitialState:function(){
 
  			//call the make board function to create a board based on number of rows requested
- 			return {board:this.makeBoard(),turn:"O"}
+ 			return {board:this.makeBoard(),turn:"O",rows:3}
  		},
  		makeTurn: function(square, row, turn) {
  			var board = this.state.board;
@@ -115,12 +115,17 @@
  		},
  		//make rows for the board based on number specified when rendering the game
  		makeBoard:function(){
+ 			if(this.state){
+ 				rows = this.state.rows;
+ 			}else{
+ 				rows  = this.props.rows;
+ 			}
  			var board = [];
  			//first loop for number of rows
- 			for(var i=0; i < this.props.rows; i++){
+ 			for(var i=0; i < rows; i++){
  				row = []
  				//second loop for number of items in row
- 				for(var j=0; j < this.props.rows; j++){
+ 				for(var j=0; j < rows; j++){
  					row.push(" ")
 
  				}
