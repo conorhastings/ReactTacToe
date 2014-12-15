@@ -148,7 +148,7 @@
  				return(<tr key={index}>
  					{row.map(function(square,location){
 
- 						return( <Square play = {square} key = {location} location = {location} row = {index} turn = {myTurn}  makeTurn = {makeTurn} />);
+ 						return(<Square play = {square} key = {location} location = {location} row = {index} turn = {myTurn}  makeTurn = {makeTurn} />);
  						
  					})}
  					</tr>);
@@ -177,7 +177,7 @@ var Square = React.createClass({
 
 })
 //render the game to the dom, attach to document.body
-React.render(<TicTacToeGame rows="3" />, document.body);
+React.render(<TicTacToeGame rows="3" />, document.getElementById('targetEl'));
 
 
 })();
