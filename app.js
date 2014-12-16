@@ -51,9 +51,9 @@
 
  		winningBoard:function(){
  			//get the length of the board, how many rows/squares per row
- 			boardLength = parseInt(this.props.rows)
+ 			var boardLength = parseInt(this.props.rows);
  			//calcuate total number of squares on the board
- 			totalSquares = boardLength * boardLength
+ 			var totalSquares = boardLength * boardLength;
  			//create a flattened version of the nested board array, this will help us determine a tie
  			var flattenedBoard = this.state.board.reduce(function(a, b) {
  				return a.concat(b);
@@ -63,8 +63,8 @@
  			//instantiate empty array that will be filled with multiple columns array
  			var columnsArray = [];
  			//instatiate array for left and righ diagonal
- 			leftDiagonal = [];
- 			rightDiagonal = [];
+ 			var leftDiagonal = [];
+ 			var rightDiagonal = [];
  			//we will join the arrays for each column/row to actually check for wins, checkX and checkO will be what we check against
  			var checkX = '';
  			var checkO = '';
@@ -181,3 +181,4 @@ React.render(<TicTacToeGame rows="3" />, document.getElementById('targetEl'));
 
 
 })();
+
