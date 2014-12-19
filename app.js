@@ -10,6 +10,9 @@
  			//call the make board function to create a board based on number of rows requested
  			return {board:this.makeBoard(),turn:"O",rows:3}
  		},
+ 		getDefaultProps:function(){
+ 			return {rows:3}
+ 		},
  		makeTurn: function(square, row, turn) {
  			var board = this.state.board;
  			//check to make sure the player is not attempting to place their piece in square that is already occupied 
@@ -17,7 +20,7 @@
  				//if the square is empty, fill it with piece of current turn
  				board[row][square] = turn;
  				//change turns based on who just went
- 				if (turn== "O"){
+ 				if (turn == "O"){
  					var newTurn = "X";
  				}
  				else{
@@ -177,8 +180,12 @@ var Square = React.createClass({
 
 })
 //render the game to the dom, attach to document.body
-React.render(<TicTacToeGame rows="3" />, document.getElementById('targetEl'));
+React.render(<TicTacToeGame />, document.getElementById('targetEl'));
 
 
 })();
+
+
+
+
 
